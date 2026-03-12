@@ -1,5 +1,5 @@
 # Raman-Extraction-Tool: Digitizing Spectra from Literature figure
-A Python-based pipeline for digitizing and standardizing Raman spectra from published figures. Features automated color masking, IModPoly baseline correction, and physical axis mapping to create AI-ready spectral databases.
+A Python-based pipeline for digitizing and standardizing Raman spectra from published figures. Features automated color masking, IModPoly baseline correction, and physical axis mapping to create spectral databases.
 
 This structure highlights the improvements over existing workflows, such as the M Terán et al. (2025) study (https://doi.org/10.1016/j.chemolab.2025.105476) as our referenced.
 The study used contour detection to localize traces and the airPLS algorithm for baseline removal, but we implemented color masking to isolate the spectrum and the IModPoly (Improved Modified Multi-Polynomial) algorithm for baseline correction. Additionally, instead of using peak detection to find axis ticks, the code employs a direct linear mapping function (pixel_to_unit) to assign wavenumbers to pixel coordinates. Moreover, we still using Tesseract OCR for label identification, applying a Savitzky-Golay filter for smoothing, and standardizing the final output to a 450–1800 cm⁻¹ range with 1 cm⁻¹ steps through linear interpolation and min-max normalization.
